@@ -1,0 +1,55 @@
+.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  height: 286px;
+  width: 50%;
+  margin-left: 25%;
+  overflow-y: auto;
+  background: border-box;
+}
+table {
+  width: 100%;
+}
+#box {
+  width: 247px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.steper {
+  background: border-box;
+}
+.mat-focus-indicator mat-button mat-button-base ng-tns-c46-1 {
+  position: fixed;
+  margin-top: -12px;
+  margin-block: -1%;
+  margin-left: -45px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #b1d3cd;
+}
+tr:nth-child(odd) {
+  background-color: #cbddda;
+}
+img {
+  max-width: 50px;
+}
+::ng-deep .tes {
+  color: red !important;
+}
+::ng-deep .text-highlight {
+  background: yellow;
+}
+#pointer {
+  cursor: pointer;
+}

@@ -1,0 +1,15 @@
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+.mat-form-field {
+  margin-top: 16px;
+}
+.steper {
+  max-width: 70%;
+  margin: auto;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

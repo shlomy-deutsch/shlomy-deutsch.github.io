@@ -1,0 +1,35 @@
+<div *ngIf="products.length == 0">המוצרים שלך יופיעו כאן</div>
+<div>
+  <table class="table" *ngIf="products.length > 0">
+    <tr>
+      <th>שם המוצר</th>
+      <th>כמות</th>
+      <th>מחיר</th>
+      <th>תמונה</th>
+      <th>מחיקה</th>
+    </tr>
+    <tr *ngFor="let p of products">
+      <td>{{ p.name }}</td>
+      <td>
+        <input
+          type="number"
+          [defaultValue]="p.count"
+          (change)="changecount(p, $event)"
+          min="1"
+        />
+      </td>
+      <td>{{ p.total_Price | currency: "ILS" }}</td>
+      <td><img [src]="imageUrl + p.image" /></td>
+      <td>
+        <button mat-raised-button (click)="delete(p.product_ID)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="btn">
+  <button mat-raised-button (click)="deleteall()">
+    רוקן את העגלה<mat-icon>delete</mat-icon>
+  </button>
+</div>

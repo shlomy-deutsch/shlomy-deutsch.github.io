@@ -1,0 +1,30 @@
+.btn {
+  display: block;
+  position: absolute;
+  margin-left: 114px !important;
+  bottom: 17%;
+}
+
+td,
+th {
+  padding: 5px;
+}
+input {
+  width: 35px;
+  background: bottom;
+  border: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+tr:nth-child(even) {
+  background-color: #b1d3cd;
+}
+tr:nth-child(odd) {
+  background-color: #cbddda;
+}
+img {
+  max-width: 50px;
+}

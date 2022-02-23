@@ -1,0 +1,135 @@
+<mat-stepper linear #stepper class="steper">
+  <mat-step [stepControl]="firstFormGroup" editable="false">
+    <form [formGroup]="firstFormGroup" (submit)="check(stepper)">
+      <ng-template matStepLabel>מלא פרטיך בבקשה</ng-template>
+      <div class="box">
+        <mat-form-field appearance="fill">
+          <mat-label>מספר זהות</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="מספר זהות"
+            name="castumer_ID"
+            [formControl]="id"
+            [(ngModel)]="auth.castumer_ID"
+          />
+          <span *ngIf="id.invalid && id.touched">ת.ז. 8 או 9 ספרות בלבד</span>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>אימייל</mat-label>
+          <input
+            matInput
+            type="email"
+            placeholder="אימייל"
+            required
+            name="username"
+            [formControl]="username"
+            [(ngModel)]="auth.username"
+          />
+          <span *ngIf="username.invalid && username.touched"
+            >כתובת האימייל לא חוקית</span
+          >
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>סיסמה</mat-label>
+          <input
+            matInput
+            type="password"
+            placeholder="סיסמה"
+            [formControl]="password"
+            [(ngModel)]="password1"
+          />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>אישור סיסמה</mat-label>
+          <input
+            matInput
+            type="password"
+            placeholder="אישור סיסמה"
+            [formControl]="checkpassword"
+            name="password"
+            required
+            [(ngModel)]="auth.password"
+            [(ngModel)]="password2"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <button
+          mat-raised-button
+          type="submit"
+          [disabled]="firstFormGroup.invalid"
+        >
+          בדוק פרטים
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" editable="false">
+    <form [formGroup]="secondFormGroup" (submit)="send(stepper)">
+      <ng-template matStepLabel>המשך במילוי הפרטים</ng-template>
+      <div class="box">
+        <mat-form-field appearance="fill">
+          <mat-label>בחר עיר</mat-label>
+          <mat-select name="city" [formControl]="city" [(ngModel)]="auth.city">
+            <mat-option *ngFor="let c of citys" [value]="c">
+              {{ c }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>רחוב</mat-label>
+          <input
+            matInput
+            [formControl]="street"
+            placeholder="רחוב"
+            name="street"
+            [(ngModel)]="auth.street"
+          />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>שם פרטי</mat-label>
+          <input
+            matInput
+            [formControl]="firstname"
+            placeholder="שם פרטי"
+            name="first_Name"
+            [(ngModel)]="auth.first_Name"
+          />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>שם משפחה</mat-label>
+          <input
+            matInput
+            [formControl]="lastname"
+            placeholder="שם משפחה"
+            name="last_Name"
+            [(ngModel)]="auth.last_Name"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <button
+          mat-raised-button
+          type="submit"
+          [disabled]="secondFormGroup.invalid"
+        >
+          Next
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>בוצע</ng-template>
+    <p>תודה לך על ההרשמה</p>
+    <div>
+      <a mat-raised-button (click)="startshop()">לחץ למעבר למסך הראשי</a>
+    </div>
+  </mat-step>
+</mat-stepper>

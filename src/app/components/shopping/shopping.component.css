@@ -1,0 +1,52 @@
+.example-container {
+  width: 100%;
+  height: 580px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: border-box;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 8%;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  background: border-box;
+}
+
+.example-sidenav {
+  padding: 24px;
+  width: 30%;
+  background: border-box;
+}
+
+.table {
+  max-width: 100%;
+  max-height: 70%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.shlo {
+  position: fixed;
+  bottom: 5.5%;
+  left: 124px;
+}
+.cartbtn {
+  font-weight: bold;
+  border-radius: 44%;
+  margin: 22px;
+  margin-top: 34px;
+  width: 16%;
+}
+
+.search1 {
+  max-height: 60px !important;
+  margin-top: 10px !important;
+  width: 80% !important;
+}
+.srcbtn {
+  position: fixed;
+  margin-top: -12px;
+  margin-block: -1%;
+  margin-left: -60px;
+}

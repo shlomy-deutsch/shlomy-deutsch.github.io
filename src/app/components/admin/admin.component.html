@@ -1,0 +1,122 @@
+<div class="example-sidenav-content">
+  <button type="button" class="crtbtn" mat-button (click)="drawer.toggle()">
+    כלים
+    <br>
+    <span class="material-icons" id="icon"> edit_note</span>
+    <span class="material-icons" id="icon"> playlist_add </span>
+  </button>
+  <form (submit)="search()">
+    <mat-form-field appearance="outline" class="search1">
+      <mat-label>חפש מוצר</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        name="searchme"
+        required
+        [(ngModel)]="searchme"
+      />
+      <button class="srcbtn" mat-button type="submit">
+        <mat-icon matSuffix>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+  <span class="material-icons" style="margin-left: 69px;">
+    account_circle
+  </span>
+  <span>{{ username }}</span>
+  <button mat-button (click)="logout()">
+    התנתק<span class="material-icons">logout</span>
+  </button>
+</div>
+<mat-drawer-container class="example-container" autosize>
+  <mat-tab-group
+    (focusChange)="getproducts($event)"
+    [(selectedIndex)]="selected"
+  >
+    <mat-tab
+      *ngFor="let tab of tabs; let index = index"
+      [label]="tab.category_Name"
+      [id]="tab.category_ID"
+    >
+      <app-product-card-admin
+        *ngFor="let p of products"
+        [product]="p"
+        (click)="drawer.open()"
+        (click)="setval()"
+      ></app-product-card-admin>
+    </mat-tab>
+    <mat-tab [label]="results" *ngIf="found === 1 || found == 2">
+      <app-product-card-admin
+        *ngFor="let p of newproducts"
+        [product]="p"
+        (click)="setval()"
+      ></app-product-card-admin>
+    </mat-tab>
+  </mat-tab-group>
+
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>
+      <button mat-raised-button (click)="openDialog()">הוספת מוצר</button>
+    </p>
+    <p>הקש על מוצר כדי לעדכן</p>
+
+    <form *ngIf="updating != 0" (submit)="update()">
+      <div mat-dialog-content>
+        <p>עדכן מוצר</p>
+        <mat-form-field appearance="fill">
+          <mat-label>שם המוצר</mat-label>
+          <input
+            matInput
+            name="name"
+            [(ngModel)]="product.name"
+            [formControl]="nameControl"
+          />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>מחיר</mat-label>
+          <input
+            type="number"
+            matInput
+            name="price"
+            [(ngModel)]="product.price"
+            [formControl]="priceControl"
+          />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>קטגוריה</mat-label>
+          <mat-select
+            name="category"
+            [(ngModel)]="product.category_ID"
+            [formControl]="categoryControl"
+          >
+            <mat-option *ngFor="let c of categories" [value]="c.id">
+              {{ c.category_Name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br />
+        <label for="image">תמונה: </label>
+        <input
+          type="file"
+          id="image"
+          name="image"
+          accept="image/*"
+          (change)="saveImage($event)"
+          [formControl]="imageControl"
+        />
+      </div>
+      <div>
+        <button
+          type="submit"
+          mat-button
+          cdkFocusInitial
+          [disabled]="myFormGroup.invalid"
+        >
+          אישור
+        </button>
+      </div>
+    </form>
+  </mat-drawer>
+</mat-drawer-container>

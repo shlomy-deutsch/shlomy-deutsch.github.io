@@ -1,0 +1,22 @@
+.card{
+    max-width: 35%;
+    width: 27%;
+    float: left;
+    display: inline-block;
+    margin: 2%;
+}
+.cards{
+    position: fixed;
+    left: 7%;
+    top: 82px;
+}
+mat-card-subtitle{
+    font-weight: bold;
+}
+mat-card{
+    min-height: 275px;
+    max-height: 275px;
+}
+mat-card-title{
+    font-size: 20px;
+}

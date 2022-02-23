@@ -1,0 +1,12 @@
+<mat-card class="example-card">
+  <a (click)="add(product)">
+    <mat-card-header>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <span class="material-icons" style="margin-left: 43px"> edit </span>
+      <mat-card-subtitle>{{
+        product.price | currency: "ILS"
+      }}</mat-card-subtitle>
+    </mat-card-header>
+    <img [src]="imageUrl + product.image" />
+  </a>
+</mat-card>

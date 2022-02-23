@@ -1,0 +1,138 @@
+<mat-stepper linear #stepper class="steper">
+  <mat-step [editable]="isEditable">
+    <ng-template matStepLabel>סיכום קניה</ng-template>
+    <button mat-raised-button (click)="goback()">חזרה לקניה</button>
+    <form>
+      <mat-form-field appearance="outline" class="search" style="width: 50%">
+        <mat-label>חפש מוצר</mat-label>
+        <input
+          matInput
+          placeholder="חפש מוצר"
+          type="text"
+          (input)="src($event.target)"
+        />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </form>
+    <div class="table">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Image</th>
+        </tr>
+        <tr *ngFor="let p of products">
+          <td innerHTML="{{ p.name | highlight: query_conversation }}"></td>
+          <td>{{ p.count }}</td>
+          <td>{{ p.total_Price | currency: "ILS" }}</td>
+          <td><img [src]="imageUrl + p.image" /></td>
+        </tr>
+      </table>
+    </div>
+    <p>סה''כ {{ total | currency: "ILS" }}</p>
+
+    <div>
+      <button mat-raised-button matStepperNext>הבא</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+    <form ngNativeValidate [formGroup]="secondFormGroup" (submit)="send()">
+      <ng-template matStepLabel>פרטי המשלוח</ng-template>
+      <div class="imput">
+        <div class="box">
+          <mat-form-field appearance="fill" id="box" style="margin-top: 13px">
+            <mat-label> בחר עיר - לחץ פעמיים למילוי מהיר</mat-label>
+            <mat-select
+              name="city"
+              required
+              [(ngModel)]="senddata.city"
+              [formControl]="cityControl"
+            >
+              <mat-option
+                *ngFor="let c of citys"
+                [value]="c"
+                name="city"
+                (dblclick)="autofill($event)"
+              >
+                {{ c }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <br />
+          <mat-form-field appearance="fill" id="box">
+            <mat-label>בחר רחוב - לחץ פעמיים למילוי מהיר</mat-label>
+            <input
+              matInput
+              placeholder="רחוב"
+              required
+              name="street"
+              required
+              [(ngModel)]="senddata.street"
+              (dblclick)="autofill($event)"
+              [formControl]="streetControl"
+            />
+          </mat-form-field>
+          <br />
+          <mat-form-field appearance="fill" id="box">
+            <mat-label>תאריך למשלוח</mat-label>
+            <input
+              matInput
+              type="date"
+              placeholder="תאריך למשלוח"
+              required
+              [formControl]="dateControl"
+              name="date"
+              [(ngModel)]="senddata.delivery_Date"
+            />
+          </mat-form-field>
+          <br />
+          <hr />
+          <mat-form-field appearance="fill" id="box">
+            <mat-label>כרטיס אשראי</mat-label>
+            <input
+              matInput
+              type="number"
+              required
+              placeholder="כרטיס אשראי"
+              name="credit"
+              required
+              [(ngModel)]="senddata.credit"
+              [formControl]="creditControl"
+            />
+            <span *ngIf="creditControl.invalid && creditControl.touched"
+              >כ. אשראי בין 9 ל12 ספרות בלבד</span
+            >
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button
+          mat-button
+          matStepperNext
+          type="submit"
+          [disabled]="secondFormGroup.invalid"
+        >
+          Next
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>בוצע</ng-template>
+    <div *ngIf="good == 0">
+      <button mat-button matStepperPrevious>Back</button>
+      <p><span>בחר תאריך אחר למשלוח</span></p>
+    </div>
+    <p *ngIf="good == 1"><span>הזמנתך בוצעה בהצלחה</span></p>
+    <br />
+    <p *ngIf="good == 1">
+      להורדת הקבלה לחץ<a (click)="downloadme()" id="pointer"> כאן </a>
+    </p>
+    <button *ngIf="good == 1" mat-raised-button (click)="confirm()">
+      אישור
+    </button>
+  </mat-step>
+</mat-stepper>

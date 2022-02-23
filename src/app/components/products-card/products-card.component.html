@@ -1,0 +1,45 @@
+<div class="container"></div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-subtitle>{{ product.price | currency: "ILS" }}</mat-card-subtitle>
+  </mat-card-header>
+  <a (click)="openDialog(product)"> <img [src]="imageUrl + product.image" /></a>
+  <mat-card-content> </mat-card-content>
+  <mat-card-actions>
+    <p class="tools">
+      <button
+        mat-icon-button
+        color="primary"
+        (click)="addme(product, count)"
+        id="btn"
+      >
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="blue"
+        (click)="plus()"
+        style="margin-left: 18px"
+        id="btn"
+      >
+        <span class="material-icons"> add </span>
+      </button>
+      <input
+        type="number"
+        [defaultValue]="count"
+        min="1"
+        style="margin-left: 5px"
+      />
+      <button
+        mat-icon-button
+        color="blue"
+        (click)="minus()"
+        id="btn"
+        style="margin-left: 7px"
+      >
+        <span class="material-icons"> remove </span>
+      </button>
+    </p>
+  </mat-card-actions>
+</mat-card>

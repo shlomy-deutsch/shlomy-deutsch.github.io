@@ -1,0 +1,80 @@
+<div class="cards">
+  <div class="card">
+    <mat-card>
+      <img src="../../../../assets/לוגו.jpg" style="width: 53%" />
+      <br />
+      <mat-card-title>...קצת עלינו</mat-card-title>
+      <mat-card-subtitle style="direction: rtl"
+        >אנחנו החברה הטובה ביותר לקניות אונליין, יותר זול מרמי לוי, יותר
+        מהיר משופרסל אונליין ויותר כשר מישיר למהדרין, אז מה יותר
+        טוב??</mat-card-subtitle
+      >
+    </mat-card>
+  </div>
+  <div class="card">
+    <mat-card>
+      <mat-card-title>היכנס בבקשה</mat-card-title>
+      <mat-card-actions>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>אימייל</mat-label>
+            <input
+              matInput
+              placeholder="Email"
+              required
+              name="username"
+              [(ngModel)]="auth.username"
+              pattern="^[A-Za-z0-9+_.-]+@(.+)$"
+            />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>סיסמה</mat-label>
+            <input
+              type="password"
+              matInput
+              placeholder="Password"
+              required
+              name="password"
+              [(ngModel)]="auth.password"
+            />
+          </mat-form-field>
+        </p>
+        <button mat-raised-button (click)="send()">כניסה</button>
+        <a routerLink="/register"> <button mat-raised-button>הרשמה</button></a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="card">
+    <mat-card>
+      <mat-card-subtitle>הזמנות שבוצעו עד כה: {{ orders }}</mat-card-subtitle>
+      <br />
+      <mat-card-subtitle
+        >מספר המוצרים הזמינים לקניה: {{ products }}</mat-card-subtitle
+      >
+      <br />
+      <mat-card-subtitle *ngIf="open === 1"
+        >אתה באמצע קניה מתאריך {{ auth.date.slice(0, 10) }}</mat-card-subtitle
+      >
+      <br />
+      <p *ngIf="open === 1">סכום הקניה כעת הוא {{ total | currency: "ILS" }}</p>
+      <mat-card-subtitle *ngIf="open === 2"
+        >קנייתך האחרונה בוצעה בתאריך
+        {{ auth.date.slice(0, 10) }}</mat-card-subtitle
+      >
+      <br />
+      <button mat-button *ngIf="open === 0" (click)="newshop()">
+        להתחלת קניה
+      </button>
+      <mat-card-actions *ngIf="open === 1 || open === 2">
+        <button mat-raised-button *ngIf="open === 1" (click)="returnshop()">
+          להמשך הקניה
+        </button>
+        <button mat-raised-button *ngIf="open === 2" (click)="newshop()">
+          להתחלת קניה
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<form (submit)="add()">
+  <div mat-dialog-content>
+    <p>בחר כמות</p>
+    <mat-form-field appearance="fill">
+      <mat-label>כמות</mat-label>
+      <input
+        matInput
+        type="number"
+        name="count"
+        [(ngModel)]="product.count"
+        [formControl]="countControl"
+        min="1"
+      />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button
+      mat-button
+      type="submit"
+      [disabled]="countControl.invalid"
+      cdkFocusInitial
+    >
+      Ok
+    </button>
+  </div>
+</form>
