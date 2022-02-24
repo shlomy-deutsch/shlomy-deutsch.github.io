@@ -1,15 +1,15 @@
 export const environment = {
   production: true,
-  myProductsUrl: 'http://localhost:3000/api/products/cart/',
-  productsImageUrl: 'http://localhost:3000/api/products/images/',
-  searchProductUrl: 'http://localhost:3000/api/products/search/',
-  productsUrl: 'http://localhost:3000/api/products/',
-  categoriesUrl: 'http://localhost:3000/api/products/categories/',
-  numberOfAllOrdersURL: 'http://localhost:3000/api/auth/order',
-  numberOfAllProductsURL: 'http://localhost:3000/api/auth/products',
-  dateUrl: 'http://localhost:3000/api/auth/date/',
-  getcartUrl: 'http://localhost:3000/api/products/carts/',
-  registerUrl: 'http://localhost:3000/api/auth/',
-  loginUrl: 'http://localhost:3000/api/auth/login/',
-  newOrderUrl: 'http://localhost:3000/api/products/order/'
+  myProductsUrl: 'https://shloming-online.herokuapp.com/api/products/cart/',
+  productsImageUrl: 'https://shloming-online.herokuapp.com/api/products/images/',
+  searchProductUrl: 'https://shloming-online.herokuapp.com/api/products/search/',
+  productsUrl: 'https://shloming-online.herokuapp.com/api/products/',
+  categoriesUrl: 'https://shloming-online.herokuapp.com/api/products/categories/',
+  numberOfAllOrdersURL: 'https://shloming-online.herokuapp.com/api/auth/order',
+  numberOfAllProductsURL: 'https://shloming-online.herokuapp.com/api/auth/products',
+  dateUrl: 'https://shloming-online.herokuapp.com/api/auth/date/',
+  getcartUrl: 'https://shloming-online.herokuapp.com/api/products/carts/',
+  registerUrl: 'https://shloming-online.herokuapp.com/api/auth/',
+  loginUrl: 'https://shloming-online.herokuapp.com/api/auth/login/',
+  newOrderUrl: 'https://shloming-online.herokuapp.com/api/products/order/'
 };
