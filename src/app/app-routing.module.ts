@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'shopping',  canActivate: [AuthGuard], component: ShoppingComponent},
   { path: 'admin',  canActivate: [AdminGuard], component: AdminComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full' },];
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '*', redirectTo: '/home', pathMatch: 'full' }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
