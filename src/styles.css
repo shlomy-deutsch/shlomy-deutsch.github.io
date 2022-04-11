@@ -5,10 +5,11 @@ body {
   margin: 0;
   padding: 0;
   height: 98%;
+  /* width: 9%; */
   text-align: center;
   font-style: initial;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* background-image: url("../src/assets/background.jpg"); */
   background-size: cover;
 

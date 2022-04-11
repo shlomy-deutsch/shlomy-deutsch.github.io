@@ -6,7 +6,8 @@
     margin: 2%;
 }
 .cards{
-    position: fixed;
+    
+    /* position: fixed; */
     left: 7%;
     top: 82px;
 }
@@ -20,3 +21,20 @@ mat-card{
 mat-card-title{
     font-size: 20px;
 }
+@media(max-width:420px){
+    .card{
+        max-width: 100%;
+        width: 96%;
+     }
+     .cards{
+        display: flex;
+        flex-direction: column;
+     
+    }
+    body{
+            height: 100%;
+            overflow-y: scroll;
+    position: relative;
+        
+    }
+ }
