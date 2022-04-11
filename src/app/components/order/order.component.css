@@ -2,7 +2,7 @@
   font-family: arial, sans-serif;
   border-collapse: collapse;
   height: 286px;
-  min-width: 334px;
+  min-width: 284px;
   max-width: 50%;
   margin-left: 25%;
   overflow-y: auto;
@@ -53,4 +53,7 @@ img {
 }
 #pointer {
   cursor: pointer;
+}
+@media(max-width:420px){
+  .table{margin-left: -22px};
 }
