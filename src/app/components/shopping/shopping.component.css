@@ -45,8 +45,14 @@
   width: 80% !important;
 }
 .srcbtn {
-  position: fixed;
-  margin-top: -12px;
-  margin-block: -1%;
-  margin-left: -60px;
+  /* position: fixed; */
+  float: right;
+  /* margin-top: -12px; */
+  margin-block: -29px;
+  /* margin-left: -60px; */
 }
+/* @media (max-width:420px){
+.cartbtn{
+  margin-block: -21%;
+} */
+/* } */
