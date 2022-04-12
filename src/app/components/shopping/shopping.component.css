@@ -15,7 +15,7 @@
 }
 
 .example-sidenav {
-  padding: 24px;
+  padding: 4%;
   width: 395px;
   /* background: border-box; */
 }
@@ -51,8 +51,17 @@
   margin-block: -29px;
   /* margin-left: -60px; */
 }
-/* @media (max-width:420px){
+#username{
+  margin-right: 18px; margin-left: 9px
+}
+@media (max-width:420px){
 .cartbtn{
-  margin-block: -21%;
-} */
-/* } */
+  margin: -4px;
+    margin-top: 9px;
+} 
+#icon{ margin-left:-13px;}
+#username{margin-right: 8px;
+  margin-left: 2px;
+}
+form{    margin-left: -17px}
+ }
