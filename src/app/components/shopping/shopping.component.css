@@ -17,7 +17,7 @@
 .example-sidenav {
   padding: 24px;
   width: 395px;
-  background: border-box;
+  /* background: border-box; */
 }
 
 .table {
@@ -28,7 +28,7 @@
 }
 .shlo {
   position: fixed;
-  bottom: 5.5%;
+  bottom: 12%;
   left: 124px;
 }
 .cartbtn {

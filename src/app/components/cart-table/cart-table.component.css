@@ -1,8 +1,8 @@
 .btn {
   display: block;
-  position: absolute;
+  position: fixed;
   margin-left: 114px !important;
-  bottom: 17%;
+  bottom: 2%;
 }
 
 td,
