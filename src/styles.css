@@ -9,7 +9,8 @@ body {
   font-style: initial;
   align-items: center;
   background-size: cover;
-
+  overflow-y: hidden;
+/* position: fixed; */
 }
 
 a {
