@@ -15,14 +15,14 @@
 }
 
 .example-sidenav {
-  padding: 4%;
+  padding: 17px;
   width: 395px;
   /* background: border-box; */
 }
 
 .table {
   max-width: 100%;
-  max-height: 70%;
+  max-height: 61%;
   overflow-y: auto;
   overflow-x: hidden;
 }
