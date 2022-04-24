@@ -104,8 +104,9 @@ export class HomeComponent implements OnInit {
         this.auth.castumer_ID
       );
       this.myRouter.navigateByUrl('/shopping');
-    } catch (err) {
-      console.log(err);
+    } catch (err:any) {
+      console.log(err)
+      err.status===403?this.notify.error("login again please"):null;
     }
   }
 }
