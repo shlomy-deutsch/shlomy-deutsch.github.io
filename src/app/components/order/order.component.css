@@ -1,8 +1,8 @@
 .table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  height: 286px;
-  min-width: 284px;
+  height: 221px;
+  min-width: 304px;
   max-width: 50%;
   margin-left: 25%;
   overflow-y: auto;
@@ -55,5 +55,5 @@ img {
   cursor: pointer;
 }
 @media(max-width:420px){
-  .table{margin-left: -22px};
+  .table{margin:auto};
 }
