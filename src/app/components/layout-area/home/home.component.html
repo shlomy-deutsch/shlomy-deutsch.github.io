@@ -1,5 +1,5 @@
 <div class="cards">
-  <div class="card">
+  <!-- <div class="card">
     <mat-card>
       <img src="../../../../assets/לוגו.jpg" style="width: 53%" />
       <br />
@@ -10,14 +10,21 @@
         טוב??</mat-card-subtitle
       >
     </mat-card>
-  </div>
+  </div> -->
+  <header>
+  <h1 class="title">Welcome to</h1>
+  
+  <h1>Shloming-Online</h1>
+  <h2>Lets see what we have prepared for you</h2>
+</header>
   <div class="card">
     <mat-card>
-      <mat-card-title>היכנס בבקשה</mat-card-title>
+      <mat-card-title>Log in</mat-card-title>
+      <mat-label>to your account</mat-label>
       <mat-card-actions>
         <p>
-          <mat-form-field appearance="outline">
-            <mat-label>אימייל</mat-label>
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
             <input
               matInput
               placeholder="Email"
@@ -29,8 +36,8 @@
           </mat-form-field>
         </p>
         <p>
-          <mat-form-field appearance="outline">
-            <mat-label>סיסמה</mat-label>
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
             <input
               type="password"
               matInput
@@ -41,12 +48,12 @@
             />
           </mat-form-field>
         </p>
-        <button mat-raised-button (click)="send()">כניסה</button>
-        <a routerLink="/register"> <button mat-raised-button>הרשמה</button></a>
+        <button mat-raised-button (click)="send()">Log in</button><br/>
+        <a routerLink="/register"> הרשמה</a>
       </mat-card-actions>
     </mat-card>
   </div>
-  <div class="card">
+  <!-- <div class="card">
     <mat-card>
       <mat-card-subtitle>הזמנות שבוצעו עד כה: {{ orders }}</mat-card-subtitle>
       <br />
@@ -76,5 +83,5 @@
         </button>
       </mat-card-actions>
     </mat-card>
-  </div>
+  </div> -->
 </div>
