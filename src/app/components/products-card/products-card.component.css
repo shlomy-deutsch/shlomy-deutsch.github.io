@@ -44,6 +44,10 @@ input {
   height: 314px;
   background: none;
 }
+.example-card:hover{
+  background-color: #cbeee0;
+ 
+}
 .container {
   margin: auto;
 }

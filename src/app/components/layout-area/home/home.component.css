@@ -1,18 +1,23 @@
 @media screen and (max-width: 650px) {
     h1{
-     font-size: 2.5rem !important;
+     font-size: 2rem !important;
+     padding: 0;
     }
+    header{    
+       
+        margin-top: 11% !important;}
     .card{
         max-width: 70% !important;
-        margin-top: 45px !important;
+        margin-top: 35px !important;
         float: initial !important;
         margin-right: 10% !important;
     }
     h2{
         padding-top: 0 !important;
+       
     }
     .title{
-        padding-bottom: 0px !important;
+        padding: 0px !important; margin: 0;
        }
    }
    .title{
